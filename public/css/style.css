@@ -32,3 +32,86 @@ main{
     width: 90%;
 
 }
+
+.agregar-paises{
+width: 60%;
+}
+
+.seccion-paises{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabla-paises{
+
+    margin-top: 20px;
+    width:100%;
+   
+}
+
+.tabla-conteneedor{
+    width: 45%;
+display: flex;
+      overflow-y: auto;    /* activa scroll vertical cuando se excede */
+      white-space: nowrap; /* evita que los elementos se rompan en varias líneas */
+
+}
+
+th{
+background-color: rgba(231, 231, 231, 0.897);
+padding: 6px 0px;
+color: rgb(117, 116, 116);
+font-size: 13px;
+padding-right: 15px;
+
+}
+
+
+td{
+    padding-right: 15px;
+
+
+    padding: 6px 0px;
+    border-bottom:  rgba(231, 231, 231, 0.897) 1px solid;
+
+color: black;
+font-size: 13px;
+font-family: Franklin Gothic Medium;
+}
+
+button{
+    border-radius:0 !important;
+}
+
+.btn-editar, .btn-elimnar{
+
+    height: 20px;
+    width: 58px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 0;
+    font-size: 12px;
+    padding:01px 0px;
+   
+  
+   
+
+}
+
+
+.accion-label, .accion-btn{
+   display: flex;
+   flex-direction: row-reverse;
+
+   padding-right: 10px;
+    
+}
+
+.bandera-conte, .bandera-label{
+    padding-left: 10px;
+}
+
+
+
