@@ -26,7 +26,7 @@ app.use("/", homeRouter);
 const paisesRouter = require("./routers/paisesRouter");
 app.use("/paises", paisesRouter); // ruta correcta
 
-
+///
 const macroindicadoresRouter = require("./routers/macroindicadores");
 app.use("/macroindicadores", macroindicadoresRouter); // ruta correcta
 
