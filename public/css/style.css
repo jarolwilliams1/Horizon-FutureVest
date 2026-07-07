@@ -82,7 +82,7 @@ font-family: Franklin Gothic Medium;
 }
 
 button{
-    border-radius:0 !important;
+    border-radius:10px !important;
 }
 
 .btn-editar, .btn-elimnar{
@@ -122,25 +122,56 @@ button{
   
 }
 .agregar-pais-contenedor{
+   
     min-width: 30%;
-    max-width: 60%;
-    height: 500px;
+    height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
-      margin-top:5%;
+      margin-top:3%;
   
-
-    border: #0D6EFD solid 1px;
-    padding: 100px 0px;
-    border-radius: 5%;
+    border: #0d6dfd48 solid 1px;
+    
+    border-radius: 15px;
+    box-shadow: #0d6dfd71 0px 0px 20px 0px ;
 }
 
 .nombre-pais-input, .ISO-pais-input{
 
-    height: 60px;
-    width: 520px;
+    height: 65px;
+    min-width: 405px;
+    max-width: 520px;
+    border-color: #95bbf3;
+    
   
+
+}
+
+.form-group{
+  padding-left: 10px;
+    padding-right: 10px;
+        padding: 0px 25px;
+
+
+}
+
+label{
+    color: gray;
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.botonos-contenedore{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-volver, .btn-crear{
+    font-size: 23px;
+    padding: 7px 25px;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 

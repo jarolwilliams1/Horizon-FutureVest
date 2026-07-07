@@ -1,17 +1,17 @@
 <h2>Agregar País</h2>
-<section class="agregar-section">
-    <div class="agregar-pais-contenedor">
-    <form method="GET" action="/paises/agregarpais">
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor ">
+    <form method="POST" action="/paises/agregarpais">
 
 
-  <div class="mb-3">
-  <label for="nombre-pais-input" class="form-label">Email address</label>
+  <div class="mb-3 form-group ">
+  <label for="nombre-pais-input" class="form-label">Nombre del Pais</label>
   <input type="text" class="form-control nombre-pais-input" id="nombre-pais-input" placeholder="Republica Dominicana" required>
 </div>
 
 
-<div class="mb-3">
-  <label for="ISO-pais-input" class="form-label">Email address</label>
+<div class="mb-3 form-group">
+  <label for="ISO-pais-input" class="form-label">ISO del Pais</label>
   <input type="text" class="form-control ISO-pais-input" id="ISO-pais-input" placeholder="RD" required>
 </div>
 
@@ -19,9 +19,8 @@
 
 
   <div class="botonos-contenedore">
-<button class="btn btn-success" type="submit"> Crear país</button>
-<button type="button" class="btn btn-warning">Volver</button>
-  </div>
+<button class="btn btn-success btn-crear" type="submit" > Crear país</button>
+<a href="/paises"></a><button type="button" class="btn btn-warning btn-volver">Volver</button>  </div>
 </form>
 </div>
 
