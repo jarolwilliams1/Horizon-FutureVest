@@ -1,12 +1,31 @@
 
 body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-link, .navbar-brand{
+    color: #ffff !important;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+
+}
+
+.navbar-toggler{
+    color: #ffff !important;
+    border: none !important;
     padding: 0;
-    margin: 0;
+    
 }
 
 
+.navbar-toggler{
+    border: none !important;
+}
+
 .nav-container{
     background-color: #0D6EFD ;
+ 
 }
 
 .select-sec{
@@ -133,12 +152,12 @@ button{
     border: #0d6dfd48 solid 1px;
     
     border-radius: 15px;
-    box-shadow: #0d6dfd71 0px 0px 20px 0px ;
+    box-shadow: #8ebbffb2 0px 0px 25px 5px  ;
 }
 
 .nombre-pais-input, .ISO-pais-input{
 
-    height: 65px;
+    height: 60px;
     min-width: 405px;
     max-width: 520px;
     border-color: #95bbf3;
@@ -157,7 +176,7 @@ button{
 
 label{
     color: gray;
-    font-size: 16px;
+    font-size: 17.5px;
     font-family:Arial, Helvetica, sans-serif;
 
 }
@@ -174,4 +193,9 @@ label{
     font-family: Arial, Helvetica, sans-serif;
 
 }
+
+.navbar-toggler-icon{
+    color: white;
+}
+
 
