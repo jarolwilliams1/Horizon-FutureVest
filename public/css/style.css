@@ -52,11 +52,11 @@ width: 60%;
 }
 
 .tabla-conteneedor{
-    width: 45%;
+    width: 80%;
 display: flex;
       overflow-y: auto;    /* activa scroll vertical cuando se excede */
       white-space: nowrap; /* evita que los elementos se rompan en varias líneas */
-
+min-width: 55%;
 }
 
 th{
@@ -113,5 +113,34 @@ button{
     padding-left: 10px;
 }
 
+.agregar-section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.agregar-pais-contenedor{
+    min-width: 30%;
+    max-width: 60%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      margin-top:5%;
+  
 
+    border: #0D6EFD solid 1px;
+    padding: 100px 0px;
+    border-radius: 5%;
+}
+
+.nombre-pais-input, .ISO-pais-input{
+
+    height: 60px;
+    width: 520px;
+  
+
+}
 

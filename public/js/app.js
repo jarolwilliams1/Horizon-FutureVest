@@ -1,1 +1,1 @@
-//
+const agregarPais = document.getElementById("bt-agregar-pais")

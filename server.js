@@ -29,5 +29,13 @@ app.use("/paises", paisesRouter); // ruta correcta
 const macroindicadoresRouter = require("./routers/macroindicadores");
 app.use("/macroindicadores", macroindicadoresRouter); // ruta correcta
 
+//const paisesRouter = require("./routers/paisesRouter");
+//app.use("/paises", paisesRouter); //  ruta base
+
+
+// Importar el router de países
+const paisesRouter2 = require("./routers/paisesRouter");
+app.use("/paises", paisesRouter2); // 👈 base de la ruta
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
