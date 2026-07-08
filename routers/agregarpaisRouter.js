@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
   res.render("paises", { titulo: "Lista de Países" });
 });
 
+router.delete("/eliminar", controllers.elimi)
 // Subruta: /paises/agregarpais
 router.get("/agregarpais", (req, res) => {
   res.render("agregarpais", { resultado: null });

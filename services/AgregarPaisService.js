@@ -1,5 +1,13 @@
 const datosPais = require("../public/js/app.js");
 
-dato
-console.log(datosPais.Nombre);
-console.log(datosPais.CodigoIso);
+
+const nombrePais = datosPais.Nombre;
+const iso = datosPais.CodigoIso;
+
+const mensaje ;
+if (nombrePais == null )
+    {
+       mensaje= "los campos son requeridos";
+
+}
+module.exports = mensaje;
