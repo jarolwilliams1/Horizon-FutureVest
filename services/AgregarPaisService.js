@@ -1,4 +1,4 @@
-
+const paisModel = require("../models/paises.models");
 
 async function crear(datos) 
 {
@@ -19,7 +19,8 @@ async function crear(datos)
 
   }
 
-  
+const guardar =  await paisModel.GuardarPaises(datos)
+return guardar;
 
 }
 
