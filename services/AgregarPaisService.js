@@ -3,8 +3,12 @@
 async function crear(datos) 
 {
     
-        console.log(datos.nombre);
+        console.log(datos);
+        console.log("hola");
+     
         
     
 
 }
+
+module.exports = {crear};

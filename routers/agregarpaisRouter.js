@@ -9,6 +9,6 @@ router.get("/", paisesController.ListaPaises );
 router.get("/agregarpais", agregarPaisController.Vista);
 
 // Subruta POST para procesar el formulario
-router.post("/agregarpais", agregarPaisController.crear);
+router.post("/paises/agregarpais", agregarPaisController.crear);
 
 module.exports = router;

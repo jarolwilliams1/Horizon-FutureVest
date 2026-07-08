@@ -5,6 +5,7 @@ async function crear(req,res){
     const datos = req.body;
 
     const resultado = await agregarpaisservice.crear(datos);
+
     
 
     res.json(resultado);
@@ -14,6 +15,8 @@ async function crear(req,res){
 // Subruta: /paises/agregarpais
 function Vista (req, res) {
   res.render("agregarpais", { resultado: null });
+              console.log("hola desde el controller");
+
   };
 
   module.exports ={

@@ -7,7 +7,7 @@ const app = express();
 // Configurar Handlebars como motor de vistas
 app.engine("hbs", engine({
     extname: ".hbs",
-    defaultLayout: "main", // Layout base en views/layouts/main.hbs
+    defaultLayout: "main",
 }));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
@@ -19,23 +19,15 @@ app.use(express.urlencoded({ extended: true }));
 // Servir archivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 
-// Cargar las rutas
+// Cargar las rutas de manera limpia
 const homeRouter = require("./routers/homeRouters");
 app.use("/", homeRouter);
 
 const paisesRouter = require("./routers/paisesRouter");
-app.use("/paises", paisesRouter); // ruta correcta
+app.use("/paises", paisesRouter); 
 
 const macroindicadoresRouter = require("./routers/macroindicadores");
-app.use("/macroindicadores", macroindicadoresRouter); // ruta correcta
-
-//const paisesRouter = require("./routers/paisesRouter");
-//app.use("/paises", paisesRouter); //  ruta base
-
-
-// Importar el router de países
-const paisesRouter2 = require("./routers/paisesRouter");
-app.use("/paises", paisesRouter2); // 👈 base de la ruta
+app.use("/macroindicadores", macroindicadoresRouter); 
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
