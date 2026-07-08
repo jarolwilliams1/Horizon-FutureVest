@@ -16,10 +16,24 @@ function AgregarPais (req, res) {
   
 };
 
+const agregarpaisservice = require("../services/AgregarPaisService")
+async function crear(req,res){
+
+    const datos = req.body;
+
+    const resultado = await agregarpaisservice.crear(datos);
+
+    
+
+    res.json(resultado);
+
+}
+
 
 module.exports = {
     ListaPaises,
     VistaAgregarPais,
-    AgregarPais
+    AgregarPais,
+    crear
 
 }

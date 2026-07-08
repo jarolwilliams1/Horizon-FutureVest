@@ -2,12 +2,24 @@
 
 async function crear(datos) 
 {
-    
-        console.log(datos);
-        console.log("hola");
-     
-        
-    
+   
+       
+  if(!datos.nombre || datos.nombre.trim() === "" ) 
+        {
+
+                
+  return { message: "El campo nombre es obligatorio" };
+   
+        }
+
+    if(!datos.nombre || datos.nombre.trim() === ""  ) 
+
+        {
+                  return { message: "El campo Codigo iso es obligatorio" };
+
+  }
+
+  
 
 }
 
