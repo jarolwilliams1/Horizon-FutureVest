@@ -1,21 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const paisesController = require("../controllers/paisesController")
 
 // Página principal de países
-router.get("/", (req, res) => {
-  res.render("paises", { titulo: "Lista de Países" });
-});
+router.get("/", paisesController.ListaPaises );
 
 // Subruta: /paises/agregarpais
-router.get("/agregarpais", (req, res) => {
-  res.render("agregarpais", { resultado: null });
-});
+router.get("/agregarpais", paisesController.VistaAgregarPais);
 
 // Subruta POST para procesar el formulario
-router.post("/agregarpais", (req, res) => {
-  const { nombre } = req.body;
-  res.render("agregarpais", { resultado: `País agregado: ${nombre}` });
-});
+router.post("/agregarpais", paisesController.AgregarPais);
 
 module.exports = router;
 

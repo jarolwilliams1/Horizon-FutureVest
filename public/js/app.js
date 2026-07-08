@@ -1,12 +1,21 @@
-const NombrePais = document.getElementById("nombre-pais-input");
-const CodigoIsoPais = document.getElementById("ISO-pais-input");
-const respuesta = require("../services/AgregarPaisService");
+const NombrePais = document.getElementById("nombre-pais-input").value;
+const CodigoIsoPais = document.getElementById("ISO-pais-input").value;
 
-const datosPais = {
-  nombre: NombrePais.value,
-  codigoIso: CodigoIsoPais.value
-};
-const alerta = respuesta.mensaje;
+fetch("agregarpais",{
 
-alert(alerta)
-module.exports = datosPais;
+    method:"POST",
+
+    headers:{
+
+        "Content-Type":"application/json"
+
+    },
+
+    body:JSON.stringify({
+
+         NombrePais,
+       CodigoIsoPais
+
+    })
+
+});

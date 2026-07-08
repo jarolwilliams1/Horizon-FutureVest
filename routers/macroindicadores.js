@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const macroindicadores = require("../controllers/macroindicadoresController")
 
-router.get("/", (req, res) => {
-    res.render("macroindicadores", { });
-});
-//
+router.get("/", macroindicadores.mostrar  );
+
 
 module.exports = router;

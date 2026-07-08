@@ -1,13 +1,10 @@
-const datosPais = require("../public/js/app.js");
 
 
-const nombrePais = datosPais.Nombre;
-const iso = datosPais.CodigoIso;
-
-const mensaje ;
-if (nombrePais == null )
-    {
-       mensaje= "los campos son requeridos";
+async function crear(datos) 
+{
+    
+        console.log(datos.nombre);
+        
+    
 
 }
-module.exports = mensaje;
