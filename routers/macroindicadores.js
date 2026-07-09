@@ -4,5 +4,5 @@ const macroindicadores = require("../controllers/macroindicadoresController")
 
 router.get("/", macroindicadores.mostrar  );
 
-
+//
 module.exports = router;
