@@ -12,7 +12,7 @@ app.engine("hbs", engine({
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
-// Middlewares esenciales para leer formularios. (POST)
+// Middlewares esenciales para leer formularios (POST)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
