@@ -2,7 +2,7 @@
 <section class="agregar-section section">
     <div class="agregar-pais-contenedor">
         <div class="form-inner">
-            <h2 class="mb-4">Crear país</h2>
+            <h2 class="mb-4">Editar país</h2>
 
             {{#if errores}}
             <div class="alert alert-danger">
@@ -10,17 +10,17 @@
             </div>
             {{/if}}
 
-            <form action="/paises/crear" method="POST">
+            <form action="/paises/editar/{{pais.id}}" method="POST">
                 <div class="mb-3 form-group">
                     <label for="nombre-pais-input" class="form-label">Nombre del País</label>
-                    <input type="text" name="nombre" class="form-control nombre-pais-input" id="nombre-pais-input" placeholder="República Dominicana" value="{{datos.nombre}}">
+                    <input type="text" name="nombre" class="form-control nombre-pais-input" id="nombre-pais-input" value="{{pais.nombre}}">
                 </div>
                 <div class="mb-3 form-group">
                     <label for="ISO-pais-input" class="form-label">Código ISO</label>
-                    <input type="text" name="iso" class="form-control ISO-pais-input" id="ISO-pais-input" placeholder="RD" value="{{datos.iso}}">
+                    <input type="text" name="iso" class="form-control ISO-pais-input" id="ISO-pais-input" value="{{pais.iso}}">
                 </div>
                 <div class="botonos-contenedore">
-                    <button class="btn btn-success btn-crear" type="submit">Crear país</button>
+                    <button class="btn btn-success btn-crear" type="submit">Guardar país</button>
                     <a href="/paises"><button type="button" class="btn btn-warning btn-volver">Volver atrás</button></a>
                 </div>
             </form>

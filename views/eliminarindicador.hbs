@@ -1,0 +1,16 @@
+<main>
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor">
+        <div class="form-inner text-center">
+            <h2 class="mb-4">Eliminar indicador</h2>
+            <p>¿Está seguro que desea eliminar el indicador de <strong>{{nombreMacro}}</strong> para <strong>{{nombrePais}}</strong> ({{indicador.anio}})?</p>
+            <div class="botonos-contenedore mt-4">
+                <form action="/indicadores/eliminar/{{indicador.id}}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-crear">Aceptar</button>
+                </form>
+                <a href="/indicadores"><button type="button" class="btn btn-warning btn-volver">Cancelar</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>

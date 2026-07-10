@@ -1,0 +1,49 @@
+<main>
+<section class="seccion-paises container mt-4">
+    <h2>Indicadores por países</h2>
+
+    <a href="/indicadores/crear"><button type="button" class="btn btn-success agregar-paises mb-3">+ Crear indicador</button></a>
+
+    <form action="/indicadores" method="GET" class="d-flex gap-2 mb-3 flex-wrap">
+        <select name="filtroPais" class="form-select" style="max-width:250px;">
+            <option value="">-- Filtrar por país --</option>
+            {{#each paises}}
+            <option value="{{id}}" {{#if (eq id ../filtroPais)}}selected{{/if}}>{{nombre}}</option>
+            {{/each}}
+        </select>
+        <input type="number" name="filtroAnio" class="form-control" placeholder="Año (opcional)" value="{{filtroAnio}}" style="max-width:150px;">
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <a href="/indicadores" class="btn btn-secondary">Limpiar</a>
+    </form>
+
+    <div class="tabla-conteneedor">
+        <table class="tabla-paises">
+            <thead>
+                <tr>
+                    <th>País</th>
+                    <th>Macroindicador</th>
+                    <th>Valor</th>
+                    <th>Año</th>
+                    <th class="accion-label">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each indicadores}}
+                <tr>
+                    <td>{{nombrePais}}</td>
+                    <td>{{nombreMacro}}</td>
+                    <td>{{valor}}</td>
+                    <td>{{anio}}</td>
+                    <td class="accion-btn">
+                        <a href="/indicadores/editar/{{id}}"><button type="button" class="btn btn-warning btn-editar">Editar</button></a>
+                        <a href="/indicadores/eliminar/{{id}}"><button type="button" class="btn btn-danger btn-elimnar">Eliminar</button></a>
+                    </td>
+                </tr>
+                {{else}}
+                <tr><td colspan="5" class="text-center text-muted">No hay indicadores registrados.</td></tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+</main>

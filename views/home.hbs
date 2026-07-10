@@ -1,37 +1,68 @@
 <main>
+<section class="container contenedor">
 
-<section class="container row  contenedor">
-
-    <section class=" header-sec">
-
+    <section class="header-sec">
         <h1 class="titulo">Dashboard de Análisis Global</h1>
         <p class="head-text">Visualización y ranking de indicadores macroeconómicos para toma de decisiones estratégicas.</p>
-
-
     </section>
 
-     <section class=" select-sec">
-
-       <div class="year-cont">
-
-        <label for=""></label>
-
-        <select class="form-select select-year" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        </select>
-
-       </div>
-
-       <button type="button" class="btn btn-primary">Primary</button>
-
-
-
+    <section class="select-sec">
+        <form action="/ranking" method="POST" class="form-ranking">
+            <div class="year-cont">
+                <label for="anio" class="form-label">Año de análisis</label>
+                <select class="form-select select-year" name="anio" id="anio">
+                    {{#each anios}}
+                    <option value="{{this}}" {{#if (eq this ../anioSeleccionado)}}selected{{/if}}>{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-ranking">Obtener ranking</button>
+        </form>
     </section>
+
+    {{#if errorPesos}}
+    <div class="alert alert-warning mt-3">
+        {{mensajePesos}}
+        <a href="/macroindicadores" class="alert-link"> Ir a Macroindicadores</a>
+    </div>
+    {{/if}}
+
+    {{#if errorElegibles}}
+    <div class="alert alert-warning mt-3">
+        {{mensajeElegibles}}
+        <a href="/indicadores" class="alert-link"> Ir a Indicadores por países</a>
+    </div>
+    {{/if}}
+
+    {{#if ranking}}
+    <section class="ranking-sec mt-4">
+        <h3 class="ranking-titulo">Ranking de países</h3>
+        <div class="tabla-conteneedor">
+            <table class="tabla-paises">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>País</th>
+                        <th>Código ISO</th>
+                        <th>Scoring</th>
+                        <th>Tasa de retorno estimada (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each ranking}}
+                    <tr>
+                        <td>{{calcularPosicion @index}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{iso}}</td>
+                        <td>{{scoring}}</td>
+                        <td>{{tasaRetorno}}%</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {{/if}}
 
 </section>
-
-
 </main>

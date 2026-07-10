@@ -1,0 +1,38 @@
+<main>
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor">
+        <div class="form-inner">
+            <h2 class="mb-4">Editar indicador</h2>
+
+            {{#if errores}}
+            <div class="alert alert-danger">
+                {{#each errores}}<p class="mb-0">{{this}}</p>{{/each}}
+            </div>
+            {{/if}}
+
+            <form action="/indicadores/editar/{{indicador.id}}" method="POST">
+                <div class="mb-3 form-group">
+                    <label class="form-label">País</label>
+                    <input type="text" class="form-control nombre-pais-input" value="{{nombrePais}}" disabled>
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Macroindicador</label>
+                    <input type="text" class="form-control nombre-pais-input" value="{{nombreMacro}}" disabled>
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Año</label>
+                    <input type="number" class="form-control nombre-pais-input" value="{{indicador.anio}}" disabled>
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Valor</label>
+                    <input type="number" name="valor" class="form-control nombre-pais-input" step="0.0001" value="{{indicador.valor}}">
+                </div>
+                <div class="botonos-contenedore">
+                    <button class="btn btn-success btn-crear" type="submit">Guardar indicador</button>
+                    <a href="/indicadores"><button type="button" class="btn btn-warning btn-volver">Volver atrás</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</main>

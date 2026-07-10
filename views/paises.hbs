@@ -1,35 +1,33 @@
+<main>
+<section class="seccion-paises container mt-4">
+    <h2 class="titulo-paises">Países</h2>
 
-<h2 class="titulo-paises">paises</h2>
+    <a href="/paises/crear"><button type="button" class="btn btn-success agregar-paises mb-3">+ Crear país</button></a>
 
-<section class="seccion-paises">
-  
-<a href="/paises/agregarpais" class="agregar-paises">  <button type="button" class="btn btn-success agregar-paises " id="bt-agregar-pais"> + Agregar Pais</button></a>
-
-<div class="tabla-conteneedor">
-
-  <table class="tabla-paises">
-  <thead>
-    <tr>
-      <th class="bandera-label">Bandera</th>
-      <th>Nombre</th>
-      <th>/Código ISO</th>
-      <th class="accion-label">Acción</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td class="bandera-conte"><img src="" alt=""></td>
-      <td>República Dominicana</td>
-      <td>RD</td>
-      <td class="accion-btn">
-        <button type="button" class="btn btn-danger btn-elimnar">Eliminar</button>
-        <button type="button" class="btn btn-warning btn-editar">Editar</button>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    <div class="tabla-conteneedor">
+        <table class="tabla-paises">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Código ISO</th>
+                    <th class="accion-label">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each paises}}
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>{{iso}}</td>
+                    <td class="accion-btn">
+                        <a href="/paises/editar/{{id}}"><button type="button" class="btn btn-warning btn-editar">Editar</button></a>
+                        <a href="/paises/eliminar/{{id}}"><button type="button" class="btn btn-danger btn-elimnar">Eliminar</button></a>
+                    </td>
+                </tr>
+                {{else}}
+                <tr><td colspan="3" class="text-center text-muted">No hay países registrados.</td></tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 </section>
+</main>

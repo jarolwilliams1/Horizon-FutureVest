@@ -1,0 +1,37 @@
+<main>
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor">
+        <div class="form-inner">
+            <h2 class="mb-4">Editar macroindicador</h2>
+
+            {{#if errores}}
+            <div class="alert alert-danger">
+                {{#each errores}}<p class="mb-0">{{this}}</p>{{/each}}
+            </div>
+            {{/if}}
+
+            <form action="/macroindicadores/editar/{{macro.id}}" method="POST">
+                <div class="mb-3 form-group">
+                    <label class="form-label">Nombre del macroindicador</label>
+                    <input type="text" name="nombre" class="form-control nombre-pais-input" value="{{macro.nombre}}">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Peso (decimal)</label>
+                    <input type="number" name="peso" class="form-control nombre-pais-input" step="0.001" min="0" max="1" value="{{macro.peso}}">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">¿Es mejor más alto?</label>
+                    <select name="esMejorMasAlto" class="form-select nombre-pais-input">
+                        <option value="true" {{#if macro.esMejorMasAlto}}selected{{/if}}>Sí</option>
+                        <option value="false" {{#unless macro.esMejorMasAlto}}selected{{/unless}}>No</option>
+                    </select>
+                </div>
+                <div class="botonos-contenedore">
+                    <button class="btn btn-success btn-crear" type="submit">Guardar macroindicador</button>
+                    <a href="/macroindicadores"><button type="button" class="btn btn-warning btn-volver">Volver atrás</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</main>

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const homeController = require("../controllers/homeController")
+const homeController = require("../controllers/homeController");
 
-//  Mostrar la página principal vacía
 router.get("/", homeController.mostrar);
+router.post("/ranking", homeController.calcularRanking);
 
 module.exports = router;

@@ -1,0 +1,30 @@
+<main>
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor">
+        <div class="form-inner">
+            <h2 class="mb-4">Configuración de tasas de retorno</h2>
+
+            {{#if errores}}
+            <div class="alert alert-danger">
+                {{#each errores}}<p class="mb-0">{{this}}</p>{{/each}}
+            </div>
+            {{/if}}
+
+            <form action="/tasas/guardar" method="POST">
+                <div class="mb-3 form-group">
+                    <label class="form-label">Tasa mínima estimada de retorno (%)</label>
+                    <input type="number" name="tasaMinima" class="form-control nombre-pais-input" step="0.01" placeholder="Ej: 2" value="{{tasas.tasaMinima}}">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Tasa máxima estimada de retorno (%)</label>
+                    <input type="number" name="tasaMaxima" class="form-control nombre-pais-input" step="0.01" placeholder="Ej: 15" value="{{tasas.tasaMaxima}}">
+                </div>
+                <div class="botonos-contenedore">
+                    <button class="btn btn-success btn-crear" type="submit">Guardar tasas</button>
+                    <a href="/"><button type="button" class="btn btn-warning btn-volver">Volver atrás</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</main>

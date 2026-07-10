@@ -1,0 +1,16 @@
+<main>
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor">
+        <div class="form-inner text-center">
+            <h2 class="mb-4">Eliminar país</h2>
+            <p>¿Está seguro que desea eliminar el país <strong>{{pais.nombre}}</strong> ({{pais.iso}})?</p>
+            <div class="botonos-contenedore mt-4">
+                <form action="/paises/eliminar/{{pais.id}}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-crear">Aceptar</button>
+                </form>
+                <a href="/paises"><button type="button" class="btn btn-warning btn-volver">Cancelar</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>

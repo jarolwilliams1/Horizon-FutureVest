@@ -1,0 +1,48 @@
+<main>
+<section class="agregar-section section">
+    <div class="agregar-pais-contenedor">
+        <div class="form-inner">
+            <h2 class="mb-4">Crear indicador</h2>
+
+            {{#if errores}}
+            <div class="alert alert-danger">
+                {{#each errores}}<p class="mb-0">{{this}}</p>{{/each}}
+            </div>
+            {{/if}}
+
+            <form action="/indicadores/crear" method="POST">
+                <div class="mb-3 form-group">
+                    <label class="form-label">País</label>
+                    <select name="paisId" class="form-select nombre-pais-input">
+                        <option value="">Seleccione un país</option>
+                        {{#each paises}}
+                        <option value="{{id}}" {{#if (eq id ../datos.paisId)}}selected{{/if}}>{{nombre}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Macroindicador</label>
+                    <select name="macroId" class="form-select nombre-pais-input">
+                        <option value="">Seleccione un macroindicador</option>
+                        {{#each macros}}
+                        <option value="{{id}}" {{#if (eq id ../datos.macroId)}}selected{{/if}}>{{nombre}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Valor</label>
+                    <input type="number" name="valor" class="form-control nombre-pais-input" step="0.0001" placeholder="Ej: 3.5" value="{{datos.valor}}">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Año</label>
+                    <input type="number" name="anio" class="form-control nombre-pais-input" placeholder="Ej: 2024" value="{{datos.anio}}">
+                </div>
+                <div class="botonos-contenedore">
+                    <button class="btn btn-success btn-crear" type="submit">Crear indicador</button>
+                    <a href="/indicadores"><button type="button" class="btn btn-warning btn-volver">Volver atrás</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</main>

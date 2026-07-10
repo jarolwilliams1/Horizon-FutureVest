@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const paisesController = require("../controllers/paisesController")
-// Página principal de países
-router.get("/", paisesController.ListaPaises );
+const paisesController = require("../controllers/paisesController");
 
-// Subruta: /paises/agregarpais
-router.get("/agregarpais", paisesController.VistaAgregarPais);
-
-// Subruta POST para procesar el formulario
-router.post("/agregarpais", paisesController.crear);
+router.get("/", paisesController.ListaPaises);
+router.get("/crear", paisesController.VistaAgregarPais);
+router.post("/crear", paisesController.CrearPais);
+router.get("/editar/:id", paisesController.VistaEditarPais);
+router.post("/editar/:id", paisesController.EditarPais);
+router.get("/eliminar/:id", paisesController.VistaEliminarPais);
+router.post("/eliminar/:id", paisesController.EliminarPais);
 
 module.exports = router;
-

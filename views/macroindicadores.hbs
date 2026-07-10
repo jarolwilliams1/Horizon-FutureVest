@@ -1,35 +1,39 @@
-<h1>Macroindicadores</h1>
+<main>
+<section class="seccion-paises container mt-4">
+    <h2>Macroindicadores</h2>
 
-<section class="seccion-paises">
+    {{#unless sumaCompleta}}
+    <a href="/macroindicadores/crear"><button type="button" class="btn btn-success agregar-paises mb-3">+ Crear macroindicador</button></a>
+    {{else}}
+    <button type="button" class="btn btn-secondary mb-3 disabled" title="La suma de pesos ya es igual a 1">+ Crear macroindicador</button>
+    {{/unless}}
 
-  <button type="button" class="btn btn-success agregar-paises" >+ Agregar Pais</button>
-
-
-<div class="tabla-conteneedor">
-
-  <table class="tabla-paises">
-  <thead>
-    <tr>
-      <th class="bandera-label">Nombre</th>
-      <th>Peso</th>
-      <th>Mejor alto?</th>
-      <th class="accion-label">Acciónes</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td class="bandera-conte">Creciminto del PIB</td>
-      <td class="peso-td">0.40</td>
-      <td class="si-no-td"><div class="si-no">si</div></td>
-      <td class="accion-btn">
-        <button type="button" class="btn btn-danger btn-elimnar">Eliminar</button>
-        <button type="button" class="btn btn-warning btn-editar">Editar</button>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    <div class="tabla-conteneedor">
+        <table class="tabla-paises">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Peso</th>
+                    <th>¿Mejor más alto?</th>
+                    <th class="accion-label">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each macroindicadores}}
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>{{peso}}</td>
+                    <td class="si-no-td"><div class="si-no">{{#if esMejorMasAlto}}Sí{{else}}No{{/if}}</div></td>
+                    <td class="accion-btn">
+                        <a href="/macroindicadores/editar/{{id}}"><button type="button" class="btn btn-warning btn-editar">Editar</button></a>
+                        <a href="/macroindicadores/eliminar/{{id}}"><button type="button" class="btn btn-danger btn-elimnar">Eliminar</button></a>
+                    </td>
+                </tr>
+                {{else}}
+                <tr><td colspan="4" class="text-center text-muted">No hay macroindicadores registrados.</td></tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 </section>
+</main>
